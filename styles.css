@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: black;
+  color: white;
+}
+
+.wrapper {
+  position: relative;
+
+  width: 90%;
+  max-width: 1536px;
+  height: 40px;
+
+  margin-top: 5rem;
+  margin-inline: auto;
+
+  overflow: hidden;
+  mask-image: linear-gradient(to right,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 1) 20%,
+      rgba(0, 0, 0, 1) 80%,
+      rgba(0, 0, 0, 0));
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: max(calc(600px * 3), 100%);
+
+  width: 600px;
+  height: 40px;
+
+  font-weight: 700;
+  animation-name: scrollLeft;
+  animation-duration: 30s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+  /*
+    animation-delay: -25s;
+
+    Si des valeurs négatives sont utilisées,
+    l'animation débutera immédiatement en étant déjà « avancée ». Par exemple, si on utilise la valeur -1s comme durée, l' animation commencera immédiatement avec l'état qu' elle aurait « normalement » eue au bout d'une seconde.
+  */
+}
+
+.item i {
+  margin: 0 10px;
+}
+
+.item1 {
+  animation-delay: calc(30s / 3 * (3 - 1) * -1);
+}
+
+.item2 {
+  animation-delay: calc(30s / 3 * (3 - 2) * -1);
+}
+
+.item3 {
+  animation-delay: calc(30s / 3 * (3 - 3) * -1);
+}
+
+@keyframes scrollLeft {
+  to {
+    left: -600px;
+  }
+}
+
+/* Comprendre la propriété mask-image */
+.el {
+  margin-top: 5rem;
+  background-image: url('https://images.unsplash.com/photo-1528759094033-e86a2379be5f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YnVsZGluZ3xlbnwwfHwwfHx8Mg%3D%3D');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  mask-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/sun.svg');
+  mask-size: 100vmin;
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
