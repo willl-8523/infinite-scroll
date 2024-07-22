@@ -19,8 +19,8 @@ body {
 .wrapper {
   position: relative;
 
-  width: 90%;
-  max-width: 1536px;
+  /* width: 90%;
+  max-width: 1536px; */
   height: 40px;
 
   margin-top: 5rem;
@@ -44,7 +44,7 @@ body {
   text-align: center;
   font-weight: 700;
   animation-name: scrollLeft;
-  animation-duration: 30s;
+  animation-duration: 20s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 
@@ -61,15 +61,15 @@ body {
 }
 
 .item1 {
-  animation-delay: calc(30s / 3 * (3 - 1) * -1);
+  animation-delay: calc(20s / 3 * (3 - 1) * -1);
 }
 
 .item2 {
-  animation-delay: calc(30s / 3 * (3 - 2) * -1);
+  animation-delay: calc(20s / 3 * (3 - 2) * -1);
 }
 
 .item3 {
-  animation-delay: calc(30s / 3 * (3 - 3) * -1);
+  animation-delay: calc(20s / 3 * (3 - 3) * -1);
 }
 
 @keyframes scrollLeft {
